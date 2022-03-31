@@ -63,34 +63,43 @@ public class Main {
 			}
 			
 			// Sell
-			int nbFoobar = foobarStock.size();
-			while(foobarStock.size() > 0) {
-				timer += Moneybox.SELL_1_TO_5_FOOBAR_TIMER;
-				if(foobarStock.size() > 5) {
-					foobarStock.remove(0);
-					foobarStock.remove(0);
-					foobarStock.remove(0);
-					foobarStock.remove(0);
-					foobarStock.remove(0);
-					foobarStock.remove(0);
-					moneybox.addMoney(5);
-				} else {
-					foobarStock.clear();
-					moneybox.addMoney(foobarStock.size());
-				}
-			}
+			timer = sell(foobarStock, moneybox, timer);
 			// Buy
-			while(moneybox.getMoneybox() > 2) {
-				moneybox.removeMoney(3);
-				robots.getRobotList().add(new Robot());
-				fooStock.add(new Foo());
-				fooStock.add(new Foo());
-				fooStock.add(new Foo());
-				fooStock.add(new Foo());
-				fooStock.add(new Foo());
-				fooStock.add(new Foo());	
-			}
+			buy(robots, fooStock, moneybox);
 		}
 		System.out.println("Le temps total pour avoir 30 robots est de " + timer + " unité de temps");
+	}
+
+	private static double sell(List<Foobar> foobarStock, Moneybox moneybox, double timer) {
+		int nbFoobar = foobarStock.size();
+		while(foobarStock.size() > 0) {
+			timer += Moneybox.SELL_1_TO_5_FOOBAR_TIMER;
+			if(foobarStock.size() > 5) {
+				foobarStock.remove(0);
+				foobarStock.remove(0);
+				foobarStock.remove(0);
+				foobarStock.remove(0);
+				foobarStock.remove(0);
+				foobarStock.remove(0);
+				moneybox.addMoney(5);
+			} else {
+				foobarStock.clear();
+				moneybox.addMoney(foobarStock.size());
+			}
+		}
+		return timer;
+	}
+
+	private static void buy(Robots robots, List<Foo> fooStock, Moneybox moneybox) {
+		while(moneybox.getMoneybox() > 2) {
+			moneybox.removeMoney(3);
+			robots.getRobotList().add(new Robot());
+			fooStock.add(new Foo());
+			fooStock.add(new Foo());
+			fooStock.add(new Foo());
+			fooStock.add(new Foo());
+			fooStock.add(new Foo());
+			fooStock.add(new Foo());	
+		}
 	}
 }
