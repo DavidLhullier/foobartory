@@ -9,8 +9,7 @@ public class Bar {
 	private int barId;
 	
 	public Bar() {
-		// create a Bar
-	    barId = count.incrementAndGet();
+		barId = count.incrementAndGet();
 	}
 	
 	public int getBarId() {

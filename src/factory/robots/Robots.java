@@ -8,7 +8,7 @@ public class Robots {
 	private List<Robot> robotList;
 	
 	public Robots() {
-		this.robotList = new ArrayList<Robot>(2);
+		this.robotList = new ArrayList<Robot>();
 	}
 	
 	public Robots(int nbRobots) {

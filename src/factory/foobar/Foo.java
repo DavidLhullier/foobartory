@@ -9,7 +9,6 @@ public class Foo {
 	private int fooId;
 	
 	public Foo() {
-		// crate a foo
 		fooId = count.incrementAndGet();
 	}
 	

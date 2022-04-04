@@ -30,18 +30,21 @@ public class Main {
 		
 		while (robots.size() < 30) {
 			double clock = 0;
-			while(clock < 30) { // mine foo and bar
+			while(clock < 30) { // mine foo and bar during 30sec
+				double maxDurationMineBar = 0;
+				double maxDurationMineFoo = 0;
 				for(Robot robot : robots.getRobotList()) {
 					if(robot.getRobotId()%2 == 0) {	
 						barStock.add(robot.createOneBar());
-						timer += robot.getDurationTask();
-						clock += robot.getDurationTask();
+						maxDurationMineBar = Math.max(maxDurationMineBar, robot.getDurationTask());
 					} else {
 						fooStock.add(robot.createOneFoo());
-						timer += robot.getDurationTask();
-						clock += robot.getDurationTask();
+						maxDurationMineFoo = Math.max(maxDurationMineFoo, robot.getDurationTask());
 					}
 				}
+				double maxDurationTask = Math.max(maxDurationMineBar, maxDurationMineFoo);
+				timer += maxDurationTask;
+				clock += maxDurationTask;
 			}
 			
 			//Robots change their activity (5sec)
@@ -71,7 +74,6 @@ public class Main {
 	}
 
 	private static double sell(List<Foobar> foobarStock, Moneybox moneybox, double timer) {
-		int nbFoobar = foobarStock.size();
 		while(foobarStock.size() > 0) {
 			timer += Moneybox.SELL_1_TO_5_FOOBAR_TIMER;
 			if(foobarStock.size() > 5) {
@@ -83,8 +85,8 @@ public class Main {
 				foobarStock.remove(0);
 				moneybox.addMoney(5);
 			} else {
-				foobarStock.clear();
 				moneybox.addMoney(foobarStock.size());
+				foobarStock.clear();
 			}
 		}
 		return timer;

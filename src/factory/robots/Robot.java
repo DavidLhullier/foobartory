@@ -16,7 +16,6 @@ public class Robot {
 	private Task task;
 
 	public Robot() {
-		// create a robot
 	    robotId = count.incrementAndGet();
 	}
 	

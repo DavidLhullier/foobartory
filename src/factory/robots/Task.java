@@ -1,7 +1,5 @@
 package factory.robots;
 
-import java.util.Random;
-
 public enum Task {
 
 	CHANGE_ACTIVITY, 
