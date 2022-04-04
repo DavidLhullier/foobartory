@@ -1,4 +1,4 @@
-package factory.foobar;
+package com.oxyl.foobartory.factory.foobar;
 
 import java.util.concurrent.atomic.AtomicInteger;
 

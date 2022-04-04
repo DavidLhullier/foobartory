@@ -1,4 +1,4 @@
-package factory.robots;
+package com.oxyl.foobartory.factory.robots;
 
 public enum Task {
 

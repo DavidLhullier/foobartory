@@ -1,12 +1,12 @@
-package factory.robots;
+package com.oxyl.foobartory.factory.robots;
 
 import java.util.Optional;
 import java.util.Random;
 import java.util.concurrent.atomic.AtomicInteger;
 
-import factory.foobar.Bar;
-import factory.foobar.Foo;
-import factory.foobar.Foobar;
+import com.oxyl.foobartory.factory.foobar.Bar;
+import com.oxyl.foobartory.factory.foobar.Foo;
+import com.oxyl.foobartory.factory.foobar.Foobar;
 
 public class Robot {
 
@@ -29,10 +29,6 @@ public class Robot {
 	
 	public void setTask(Task task) {
 		this.task = task;
-	}
-
-	public void moveTo() {
-		setTask(Task.CHANGE_ACTIVITY);
 	}
 
 	public Bar createOneBar() {

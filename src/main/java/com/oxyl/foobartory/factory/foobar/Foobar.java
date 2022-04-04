@@ -1,4 +1,4 @@
-package factory.foobar;
+package com.oxyl.foobartory.factory.foobar;
 
 public class Foobar {
 	

@@ -1,4 +1,4 @@
-package factory.robots;
+package com.oxyl.foobartory.factory.robots;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -9,12 +9,6 @@ public class Robots {
 	
 	public Robots() {
 		this.robotList = new ArrayList<Robot>();
-	}
-	
-	public Robots(int nbRobots) {
-		this.robotList = new ArrayList<Robot>(nbRobots);
-		this.robotList.add(new Robot());
-		this.robotList.add(new Robot());
 	}
 	
 	public Robot getRobotByIndex(int index) {

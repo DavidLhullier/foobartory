@@ -1,6 +1,6 @@
-package test;
+package com.oxyl.foobartory.main;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -8,12 +8,12 @@ import java.util.Optional;
 
 import org.junit.jupiter.api.Test;
 
-import factory.foobar.Bar;
-import factory.foobar.Foo;
-import factory.foobar.Foobar;
-import factory.moneybox.Moneybox;
-import factory.robots.Robot;
-import factory.robots.Robots;
+import com.oxyl.foobartory.factory.foobar.Bar;
+import com.oxyl.foobartory.factory.foobar.Foo;
+import com.oxyl.foobartory.factory.foobar.Foobar;
+import com.oxyl.foobartory.factory.moneybox.Moneybox;
+import com.oxyl.foobartory.factory.robots.Robot;
+import com.oxyl.foobartory.factory.robots.Robots;
 
 public class MainTest {
 	

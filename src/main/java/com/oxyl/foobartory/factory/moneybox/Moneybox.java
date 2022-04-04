@@ -1,4 +1,4 @@
-package factory.moneybox;
+package com.oxyl.foobartory.factory.moneybox;
 
 public class Moneybox {
 
